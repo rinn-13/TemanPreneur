@@ -1,0 +1,66 @@
+/* TemanPreneur Design System */
+:root {
+  --tp-container-max: 1280px;
+  --tp-container-pad: clamp(16px, 3vw, 28px);
+  --tp-grid-gap: 20px;
+  --tp-red: #e53e3e;
+  --tp-red-dark: #c53030;
+  --tp-red-light: #fef2f2;
+  --tp-gold: #f59e0b;
+  --tp-gold-dark: #d97706;
+  --tp-text: #111827;
+  --tp-text-muted: #6b7280;
+  --tp-border: #e5e7eb;
+  --tp-bg: #f4f5f7;
+  --tp-radius: 12px;
+  --tp-radius-lg: 16px;
+  --tp-shadow: 0 4px 16px rgba(0,0,0,.06);
+  --tp-shadow-hover: 0 8px 24px rgba(229,62,62,.12);
+  --tp-transition: all .2s cubic-bezier(.4,0,.2,1);
+  --tp-font: 'Plus Jakarta Sans', sans-serif;
+}
+
+.tp-card {
+  background: #fff;
+  border-radius: var(--tp-radius-lg);
+  border: 1.5px solid var(--tp-border);
+  box-shadow: var(--tp-shadow);
+  transition: var(--tp-transition);
+}
+.tp-card:hover { box-shadow: var(--tp-shadow-hover); }
+
+.tp-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 20px; border-radius: 10px; font-weight: 700;
+  font-family: var(--tp-font); font-size: .875rem; cursor: pointer;
+  border: none; transition: var(--tp-transition);
+}
+.tp-btn--primary { background: linear-gradient(135deg, #f56565, var(--tp-red-dark)); color: #fff; }
+.tp-btn--primary:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(229,62,62,.35); }
+.tp-btn--ghost { background: #f3f4f6; color: #374151; border: 1.5px solid var(--tp-border); }
+
+.premium-card {
+  background: linear-gradient(145deg, #1a0a00 0%, #2d1500 50%, #1a0a00 100%);
+  border: 1.5px solid transparent;
+  border-image: linear-gradient(135deg, var(--tp-gold), var(--tp-red)) 1;
+  border-radius: var(--tp-radius-lg);
+  box-shadow: 0 0 32px rgba(245,158,11,.2), inset 0 1px 0 rgba(255,255,255,.08);
+  position: relative; overflow: hidden;
+}
+.premium-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 0%, rgba(245,158,11,.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.premium-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 12px; border-radius: 20px;
+  background: linear-gradient(135deg, var(--tp-gold), var(--tp-gold-dark));
+  color: #fff; font-size: .72rem; font-weight: 800;
+  animation: premium-shine 3s ease-in-out infinite;
+}
+@keyframes premium-shine {
+  0%, 100% { box-shadow: 0 0 8px rgba(245,158,11,.4); }
+  50% { box-shadow: 0 0 20px rgba(245,158,11,.7); }
+}

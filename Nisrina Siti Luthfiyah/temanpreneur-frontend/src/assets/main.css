@@ -1,0 +1,142 @@
+/* =========================================
+   PREMIUM ADMIN DASHBOARD STYLES
+   Grid 8px, Glassmorphism, Soft Shadows
+========================================= */
+
+/* 1. Base & Background */
+body {
+  background: #f4f7f9; /* Warna abu-abu yang lebih soft/dingin */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1f2937;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Glassmorphism Cards */
+.ap__card, .modal-box, .stat-card, .pf__kpi, .admin-panel, .vf__card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 20px !important; /* Rounded XL */
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0,0,0,0.02) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease !important;
+}
+
+.ap__card:hover, .stat-card:hover, .pf__kpi:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0,0,0,0.04) !important;
+}
+
+/* 3. Spacing & Padding yang lega (8px system) */
+.ap {
+  padding: 32px 40px 64px !important; /* Lebih lega */
+  /* Pastikan .ap berada di bawah navbar fixed */
+  margin-top: var(--navbar-h, 64px);
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.ap__card-header, .ap__toolbar {
+  padding: 24px 32px !important;
+  border-bottom: 1px solid rgba(0,0,0,0.03) !important;
+}
+
+/* 4. Typography yang lebih elegan */
+.ap__title {
+  font-family: 'Fraunces', serif;
+  font-size: 2.2rem !important;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.ap__sub {
+  font-size: 0.95rem !important;
+  color: #6b7280;
+  margin-top: 8px !important;
+}
+
+/* 5. Buttons dengan Micro-interactions */
+.ap__btn {
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.ap__btn--primary {
+  box-shadow: 0 8px 20px -6px rgba(229, 62, 62, 0.4) !important;
+}
+
+.ap__btn--primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 24px -6px rgba(229, 62, 62, 0.5) !important;
+}
+
+.ap__btn:active {
+  transform: scale(0.96) !important;
+}
+
+/* 6. Inputs & Search (Soft feel) */
+.ap__search, .ap__select, input, textarea, select {
+  border-radius: 12px !important;
+  background: #f9fafb !important;
+  border: 1.5px solid transparent !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+  transition: all 0.3s ease !important;
+}
+
+.ap__search:focus-within, input:focus, textarea:focus, select:focus {
+  background: #fff !important;
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.1), inset 0 0 0 transparent !important;
+}
+
+/* 7. Tables & Lists */
+.ap__th, .prod-header {
+  background: transparent !important;
+  border-bottom: 2px solid #f3f4f6 !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.05em;
+}
+
+.ap__tr, .order-row, .vf__card {
+  border-bottom: 1px solid #f3f4f6 !important;
+  transition: background 0.3s ease, padding 0.3s ease !important;
+}
+
+.ap__tr:hover, .order-row:hover {
+  background: #fdfdfd !important;
+  border-radius: 12px;
+  transform: scale(1.005);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  z-index: 10;
+  position: relative;
+}
+
+/* 8. Modals dengan Blur Backdrop */
+.modal-bg {
+  background: rgba(17, 24, 39, 0.4) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-box {
+  border-radius: 24px !important;
+  padding: 40px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* 9. Animations */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card {
+  animation: fade-in-up 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
